@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('user_course_class_progress');
+        Schema::dropIfExists('user_course_lesson_progress');
     }
 };
