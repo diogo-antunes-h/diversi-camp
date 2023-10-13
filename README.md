@@ -1,66 +1,33 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Diversi Camp
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
-## About Laravel
+## Pitch
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+    Contextualização:
+    Aqui na Atlas estamos comprometidos em promover uma cultura corporativa inclusiva e diversificada. Reconhecemos que a diversidade é uma fonte de inovação, criatividade e colaboração, além de ser um princípio fundamental para a justiça social. No entanto, também reconhecemos que o mercado de trabalho ainda enfrenta desafios significativos em termos de igualdade de oportunidades para todos os indivíduos, independentemente de sua origem étnica, gênero, orientação sexual ou outras características pessoais.
+    Objetivo do Hackathon:
+    Nesse contexto, estamos empolgadíssimos em anunciar nosso próximo Hackathon com o desafio principal: “Diversidade: Como tornar o mercado de trabalho mais diverso e igualitário em oportunidades?” Vamos  reunir as mentes mais brilhantes e criativas de nossa galáxia para encontrar soluções inovadoras que abordem essa questão crítica e alinhada ao nosso DiversiAtlas - let’s walk the talk!
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+    Razões para o Desafio:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+    - Dados Alarmantes: Segundo dados recentes, muitos grupos minoritários enfrentam barreiras significativas na busca de oportunidades de emprego, promoções e inclusão nas empresas de tecnologia.
 
-## Learning Laravel
+    - Impacto Positivo: A diversidade no local de trabalho não é apenas uma questão ética, mas também está comprovadamente ligada ao sucesso de uma empresa. Diversas equipes tendem a ser mais inovadoras e a tomar decisões mais eficazes.
+    - Um Compromisso com a Mudança: A Atlas  está comprometida em ser líder exemplar em promover a diversidade e a igualdade de oportunidades.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+    - O Desafio:
+    Os participantes deste Hackathon serão desafiados a criar soluções inovadoras que abordem as seguintes áreas:
+    Recrutamento Inclusivo: Desenvolver estratégias para garantir que a empresa alcance e atraia candidatos diversos, removendo barreiras ao recrutamento.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+    Desenvolvimento Profissional: Propor iniciativas que garantam igualdade de oportunidades de crescimento e promoção para todos os funcionários, independentemente de sua origem.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+    Cultura Corporativa Inclusiva: Criar programas e políticas que promovam uma cultura de inclusão, onde todos os funcionários se sintam valorizados e respeitados.
 
-## Laravel Sponsors
+    Mentoria e Apoio: Desenvolver sistemas de apoio, como programas de mentoria, para ajudar os funcionários a alcançar todo o seu potencial.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+    Incentivo à Criatividade e Eficiência:
+    Estamos à procura de soluções que se destaquem em termos de criatividade e eficácia. Encorajamos abordagens inovadoras, uso de tecnologia e colaboração entre equipes para criar soluções holísticas.
 
-### Premium Partners
+    Esse Hackathon não apenas promove o pensamento criativo, mas também busca concretizar mudanças significativas em nossa empresa e no mercado como um todo.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+    A Atlas Technologies acredita que, juntos, podemos criar um mercado de trabalho mais diversificado, igualitário e inclusivo, e esperamos ansiosamente as ideias transformadoras que surgirão neste evento. Junte-se a nós nesse foguete em busca de um futuro mais igualitário e brilhante para todas as pessoas <3
