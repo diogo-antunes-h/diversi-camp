@@ -33,3 +33,7 @@ Route::middleware([
         return Inertia::render('Dashboard');
     })->name('dashboard');
 });
+
+Route::get('/courses', function () {
+    return Inertia::render('Courses/Index');
+})->name('courses');
