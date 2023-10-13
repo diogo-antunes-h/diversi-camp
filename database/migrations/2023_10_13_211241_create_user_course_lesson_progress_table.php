@@ -11,12 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('courses', function (Blueprint $table) {
+        Schema::create('user_course_lesson_progress', function (Blueprint $table) {
             $table->id();
-            $table->string('title', 255);
+            $table->foreignId('user_course_id')->references('id')->on('user_courses');
+            $table->foreignId('lesson_id')->references('id')->on('lessons');
             $table->foreignId('user_id')->references('id')->on('users');
+            $table->boolean('finished')->default(0);
+            $table->timestamp('finished_at')->nullable();
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -25,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('courses');
+        Schema::dropIfExists('user_course_class_progress');
     }
 };

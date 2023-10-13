@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('class_comments', function (Blueprint $table) {
+        Schema::create('lesson_comments', function (Blueprint $table) {
             $table->id();
             $table->text('comment');
             $table->foreignId('user_id')->references('id')->on('users');
-            $table->foreignId('class_id')->references('id')->on('classes');
+            $table->foreignId('lesson_id')->references('id')->on('lessons');
             $table->boolean('closed')->default(0);
             $table->foreignId('closed_user_id')->nullable()->references('id')->on('users');
-            $table->foreignId('comment_id')->nullable()->references('id')->on('class_comments');
+            $table->foreignId('lesson_comment_id')->nullable()->references('id')->on('lesson_comments');
             $table->timestamps();
             $table->softDeletes();
         });
