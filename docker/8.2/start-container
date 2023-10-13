@@ -15,3 +15,6 @@ if [ $# -gt 0 ]; then
 else
     exec /usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf
 fi
+
+exec composer install
+exec npm install
