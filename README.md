@@ -5,11 +5,12 @@
 
 ### Needs composer!
 
-1. `docker compose up -d`
-2. `./vendor/bin/sail artisan key:generate`
-3. `./vendor/bin/sail artisan migrate`
-4. `./vendor/bin/sail artisan serve`
-5. `./vendor/bin/sail npm run dev`
+1. `cp .env.example .env`
+2. `docker compose up -d`
+3. `./vendor/bin/sail artisan key:generate`
+4. `./vendor/bin/sail artisan migrate`
+5. `./vendor/bin/sail artisan serve`
+6. `./vendor/bin/sail npm run dev`
 
 ### Add sail as alias
 
