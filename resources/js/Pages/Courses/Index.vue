@@ -307,17 +307,17 @@ export default {
       classes: [
         {
           id: 1,
-          name: "Capitulo 1 - Instalando o ambiente",
+          name: "Instalando o ambiente",
           video: "https://www.youtube.com/embed/zZ6vybT1HQs",
         },
         {
           id: 2,
-          name: "Capitulo 2 - Apertando os cintos",
+          name: "Apertando os cintos",
           video: "https://www.youtube.com/embed/zZ6vybT1HQs",
         },
         {
           id: 3,
-          name: "Capitulo 3 - Decolando",
+          name: "Decolando",
           video: "https://www.youtube.com/embed/zZ6vybT1HQs",
         },
       ],
