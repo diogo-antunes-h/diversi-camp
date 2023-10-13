@@ -23,7 +23,7 @@ class LessonComment extends Model
         'lesson_comment_id',
     ];
 
-    public function lessonCommentResponse()
+    public function replies()
     {
         return $this->hasMany(self::class, 'lesson_comment_id', 'id')->orderBY('created_at');
     }

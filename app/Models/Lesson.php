@@ -18,6 +18,8 @@ class Lesson extends Model
         'title',
         'order',
         'course_id',
+        'path',
+        'description',
     ];
 
     public function lessonComments()
