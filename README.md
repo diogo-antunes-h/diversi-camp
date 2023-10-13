@@ -3,24 +3,27 @@
 
 ## Project start-up
 
-### Needs composer!
+### Needs docker
 
 1. `cp .env.example .env`
+
 2. `docker compose up -d`
-3. `./vendor/bin/sail artisan key:generate`
-4. `./vendor/bin/sail artisan migrate`
-5. `./vendor/bin/sail artisan serve`
-6. `./vendor/bin/sail npm run dev`
 
-### Add sail as alias
+Gerar a chave da aplicação
 
-```bash
-echo "alias sail='./vendor/bin/sail'" >> ~/.bash_alias_laravel_sail && source ~/.bash_alias_laravel_sail
-```
+3. `docker exec -it app php artisan key:generate`
 
-Então será possível usar `sail <commands>` em vez de `./vendor/bin/sail <commands>`
+Rodar migrações para o banco
 
-[Laravel Sail docs](https://laravel.com/docs/10.x/sail)
+4. `docker exec -it app php artisan migrate`
+
+Servir a aplicação (back-end)
+
+5. `docker exec -it app php artisan serve`
+
+Compilar o front-end
+
+6. `docker exec -it app npm run dev`
 
 ## Pitch
 
