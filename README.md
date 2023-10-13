@@ -1,6 +1,26 @@
 # Diversi Camp
 
 
+## Project start-up
+
+### Needs composer!
+
+1. `docker compose up -d`
+2. `./vendor/bin/sail artisan key:generate`
+3. `./vendor/bin/sail artisan migrate`
+4. `./vendor/bin/sail artisan serve`
+5. `./vendor/bin/sail npm run dev`
+
+### Add sail as alias
+
+```bash
+echo "alias sail='./vendor/bin/sail'" >> ~/.bash_alias_laravel_sail && source ~/.bash_alias_laravel_sail
+```
+
+Então será possível usar `sail <commands>` em vez de `./vendor/bin/sail <commands>`
+
+[Laravel Sail docs](https://laravel.com/docs/10.x/sail)
+
 ## Pitch
 
     Contextualização:
