@@ -36,18 +36,16 @@ import Welcome from "@/Components/Welcome.vue";
                 :key="video.id"
                 :id="video.id"
               >
-                <iframe
+                <img
                   class="w-full"
-                  v-bind:src="video.video"
-                  v-bind:title="video.name"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen
-                ></iframe>
+                  v-bind:src="getVideoThumbnail(video.path)"
+                  v-bind:alt="video.title"
+                />
                 <button
+                  v-on:click="changeIframe(video.path)"
                   class="p-2 w-full center bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
                 >
-                  {{ video.name }}
+                  {{ video.title }}
                 </button>
               </div>
             </div>
@@ -237,18 +235,18 @@ export default {
       classes: [
         {
           id: 1,
-          name: "Instalando o ambiente",
-          video: "https://www.youtube.com/embed/zZ6vybT1HQs",
+          title: "Instalando o ambiente",
+          path: "https://www.youtube.com/embed/zZ6vybT1HQs",
         },
         {
           id: 2,
-          name: "Apertando os cintos",
-          video: "https://www.youtube.com/embed/zZ6vybT1HQs",
+          title: "Apertando os cintos",
+          path: "https://www.youtube.com/embed/zZ6vybT1HQs",
         },
         {
           id: 3,
-          name: "Decolando",
-          video: "https://www.youtube.com/embed/zZ6vybT1HQs",
+          title: "Decolando",
+          path: "https://www.youtube.com/embed/zZ6vybT1HQs",
         },
       ],
       discussion: [
@@ -273,6 +271,11 @@ export default {
       user: this.$page.props.auth.user.name,
     };
   },
+  mounted() {
+    fetch("/get-course/1")
+      .then((response) => response.json())
+      .then((json) => this.mountData(json));
+  },
   methods: {
     postComment() {
       this.discussion.push({
@@ -295,6 +298,18 @@ export default {
         }
       });
       this.replieTextArea = false;
+    },
+    getVideoThumbnail(video) {
+      let videoId = video.split("/").pop();
+      return `https://img.youtube.com/vi/${videoId}/0.jpg`;
+    },
+    changeIframe(video) {
+      this.video = video;
+    },
+    mountData(json) {
+      this.title = json.title;
+      this.video = json.lessons[0].path;
+      this.classes = json.lessons;
     },
   },
 };

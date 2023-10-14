@@ -37,3 +37,6 @@ Route::middleware([
 Route::get('/courses', function () {
     return Inertia::render('Courses/Index');
 })->name('courses');
+
+
+Route::get('/get-course/{id}', 'App\Http\Controllers\Api\Classes\ClassesController@getClasses')->name('get-course');
