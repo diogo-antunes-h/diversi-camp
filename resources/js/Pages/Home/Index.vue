@@ -21,8 +21,8 @@ const internalHomeLink = computed(() => {
 
 <template>
 
-    <div class="p-home font-sans text-[#140420]/[0.87] text-base">
-        <header class=" w-full h-24 bg-white grid grid-cols-[auto_1fr_auto] items-center px-28">
+    <div class="p-home font-sans text-[#140420]/[0.87] text-base grid justify-center">
+        <header class=" w-full h-24 bg-white grid grid-cols-[auto_1fr_auto] items-center px-28 absolute top-0 left-0">
             <img class="h-[50px] w-auto" src="logo.png" alt="logo diversatlas">
 
             <nav class="grid justify-end px-8">
@@ -60,7 +60,7 @@ const internalHomeLink = computed(() => {
             <img class="w-[40px] h-[40px]" src="logo-atlas.svg" alt="logo da atlas techonologies">
         </header>
 
-        <main class="w-full p-28">
+        <main class="w-full p-28 mt-[100px] max-w-[1200px]">
             <section class="grid grid-cols-2 gap-8">
                 <header class="grid gap-6 text-left content-center">
                     <h1 class="text-5xl font-black text-[#05EBFD]/[0.87]">Educação, diversidade e inclusão para todos</h1>
