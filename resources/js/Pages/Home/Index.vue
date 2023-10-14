@@ -1,11 +1,19 @@
 <script setup>
 import { Link } from '@inertiajs/vue3'
+import { usePage } from '@inertiajs/vue3'
+import { computed } from 'vue'
 
 defineProps({
     canLogin: Boolean,
     canRegister: Boolean,
     laravelVersion: String,
     phpVersion: String,
+})
+
+const page = usePage()
+
+const internalHomeLink = computed(() => {
+    return page.props.auth.user ? route('dashboard') : route('register')
 })
 
 </script>
@@ -59,7 +67,12 @@ defineProps({
 
                     <p class="text-xl text-[#ffff]/[0.87]">Lorem ipsum dolor sit amet consectetur. Laoreet morbi amet suspendisse egestas varius sit tellus turpis. Adipiscing morbi quis eu eu ridiculus ornare quam.</p>
 
-                    <button class=" flex py-2 px-3 bg-[#FFCB32] text-[#140420]/[0.87] w-fit rounded-lg text-base font-bold" >Faça parte</button>
+                    <Link
+                        class="flex px-6 py-3 bg-[#FFCB32] text-[#140420]/[0.87] w-fit rounded-lg text-base font-bold"
+                        :href="route('register')"
+                    >
+                        Faça parte
+                    </Link>
                 </header>
 
                 <div class="w-full max-w-full">
@@ -85,7 +98,7 @@ defineProps({
                             <img src="" alt="" class="a-card-icon w-[62px] h-[62px]">
                         </header>
                         <div class="m-card__body grid gap-4">
-                            <h3 class="a-card-title text-[#05EBFD]/[0.87] text-2xl font-black">Nossos cursos</h3>
+                            <h3 class="a-card-title text-[#05EBFD]/[0.87] text-2xl font-black">Nossos eventos</h3>
                             <p class="a-card-text">Lorem ipsum dolor sit amet consectetur. Laoreet morbi amet suspendisse egestas varius sit tellus turpis. Adipiscing morbi quis eu eu ridiculus ornare quam.</p>
                         </div>
                     </article>
@@ -95,7 +108,7 @@ defineProps({
                             <img src="" alt="" class="a-card-icon w-[62px] h-[62px]">
                         </header>
                         <div class="m-card__body grid gap-4">
-                            <h3 class="a-card-title text-[#05EBFD]/[0.87] text-2xl font-black">Nossos cursos</h3>
+                            <h3 class="a-card-title text-[#05EBFD]/[0.87] text-2xl font-black">Nossa missão</h3>
                             <p class="a-card-text">Lorem ipsum dolor sit amet consectetur. Laoreet morbi amet suspendisse egestas varius sit tellus turpis. Adipiscing morbi quis eu eu ridiculus ornare quam.</p>
                         </div>
                     </article>
@@ -119,7 +132,9 @@ defineProps({
                             <img src="" alt="" class="a-card-icon w-full h-[140px]">
                         </header>
                         <div class="m-card__body grid gap-4">
-                            <h3 class="a-card-title text-[#05EBFD]/[0.87] text-2xl font-black">Nossos cursos</h3>
+                            <h3 class="a-card-title text-[#05EBFD]/[0.87] text-2xl font-black">
+                                <Link class="hover:text-[#FE6A7A]" :href="internalHomeLink">Curso 1</Link>
+                            </h3>
                             <p class="a-card-text">Lorem ipsum dolor sit amet consectetur. Laoreet morbi amet suspendisse egestas varius sit tellus turpis. Adipiscing morbi quis eu eu ridiculus ornare quam.</p>
                         </div>
                     </article>
@@ -129,7 +144,9 @@ defineProps({
                             <img src="" alt="" class="a-card-icon w-full h-[140px]">
                         </header>
                         <div class="m-card__body grid gap-4">
-                            <h3 class="a-card-title text-[#05EBFD]/[0.87] text-2xl font-black">Nossos cursos</h3>
+                            <h3 class="a-card-title text-[#05EBFD]/[0.87] text-2xl font-black">
+                                <Link class="hover:text-[#FE6A7A]" :href="internalHomeLink">Curso 2</Link>
+                            </h3>
                             <p class="a-card-text">Lorem ipsum dolor sit amet consectetur. Laoreet morbi amet suspendisse egestas varius sit tellus turpis. Adipiscing morbi quis eu eu ridiculus ornare quam.</p>
                         </div>
                     </article>
@@ -139,7 +156,9 @@ defineProps({
                             <img src="" alt="" class="a-card-icon w-full h-[140px]">
                         </header>
                         <div class="m-card__body grid gap-4">
-                            <h3 class="a-card-title text-[#05EBFD]/[0.87] text-2xl font-black">Nossos cursos</h3>
+                            <h3 class="a-card-title text-[#05EBFD]/[0.87] text-2xl font-black">
+                                <Link class="hover:text-[#FE6A7A]" :href="internalHomeLink">Curso 3</Link>
+                            </h3>
                             <p class="a-card-text">Lorem ipsum dolor sit amet consectetur. Laoreet morbi amet suspendisse egestas varius sit tellus turpis. Adipiscing morbi quis eu eu ridiculus ornare quam.</p>
                         </div>
                     </article>
@@ -189,7 +208,12 @@ defineProps({
 
                     <p>Lorem ipsum dolor sit amet consectetur. Laoreet morbi amet suspendisse egestas varius sit tellus turpis. Adipiscing morbi quis eu eu ridiculus ornare quam.</p>
 
-                    <button class=" flex py-2 px-3 bg-[#FFCB32] text-[#140420]/[0.87] w-fit rounded-lg text-base font-bold" >Faça parte</button>
+                    <Link
+                        class="flex px-6 py-3 bg-[#FFCB32] text-[#140420]/[0.87] w-fit rounded-lg text-base font-bold"
+                        :href="route('register')"
+                    >
+                        Faça parte
+                    </Link>
                 </div>
             </section>
         </main>
