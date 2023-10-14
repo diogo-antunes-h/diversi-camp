@@ -1,6 +1,6 @@
 <script setup>
 import AppLayout from "@/Layouts/AppLayout.vue";
-import { useForm } from '@inertiajs/vue3';
+import { Link, useForm } from '@inertiajs/vue3';
 </script>
 
 <template>
@@ -24,16 +24,19 @@ import { useForm } from '@inertiajs/vue3';
                                 :disabled="formSubscribe.processing || formUnsubscribe.processing"
                                 class="border rounded-md py-3 px-5 hover:bg-gray-400 hover:text-white dark:hover:bg-white dark:hover:text-black w-40"
                                 action="submit">
-                                <span v-if="isSubscribed">{{ mouseOnUnsubscribe ? 'Desinscrever-se' : 'Já inscrito!'
-                                }}</span>
+                                <span v-if="isSubscribed">{{ mouseOnUnsubscribe ? 'Desinscrever-se' : 'Já inscrito!' }}</span>
                                 <span v-else>Inscrever-se</span>
                             </button>
-                            <a href="/courses/php-do-basico-ao-avancado/watch" v-if="isSubscribed"
-                                class="space-x-1 border rounded-md py-3 px-5 hover:bg-gray-400 hover:text-white dark:hover:bg-white dark:hover:text-black w-40">
-                                Continuar
-                            </a>
                         </form>
 
+                        <div v-if="isSubscribed" class="mt-5">
+                            <div>
+                                <Link :href="route('courses.watch', {slug: this.course.slug})"
+                                    class="space-x-1 border rounded-md py-3 px-5 hover:bg-gray-400 hover:text-white dark:hover:bg-white dark:hover:text-black w-40">
+                                    Continuar
+                                </Link>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
