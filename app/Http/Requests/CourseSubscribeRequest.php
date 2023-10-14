@@ -18,7 +18,7 @@ class CourseSubscribeRequest extends FormRequest
     public function rules(): array
     {
         /**
-         * @var User
+         * @var int
          */
         $userId = Auth::user()->id;
 
@@ -26,7 +26,9 @@ class CourseSubscribeRequest extends FormRequest
             'course_id' => [
                 'required',
                 'exists:courses,id',
-                (new Unique(UserCourse::class, 'course_id'))->where('user_id', $userId),
+                (new Unique(UserCourse::class, 'course_id'))
+                    ->where('user_id', $userId)
+                    ->whereNull('deleted_at'),
             ],
         ];
     }
