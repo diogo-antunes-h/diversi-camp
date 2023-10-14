@@ -22,7 +22,11 @@ class UserCourseSeeder extends Seeder
 
                 if (! $isSubscribed) continue;
 
-                $user->courses()->save($course);
+                $user->courses()->create([
+                    'user_id' => $user->id,
+                    'course_id' => $course->id,
+                    'finished' => (bool)random_int(0, 1),
+                ]);
             }
         }
     }
