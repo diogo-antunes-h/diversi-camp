@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Course;
 use Inertia\Response;
 
 class CoursesController extends Controller
@@ -14,14 +15,7 @@ class CoursesController extends Controller
 
     public function show(string $slug): Response
     {
-        $course = collect([
-            'title' => str($slug)->camel(),
-            'slug' => $slug,
-            'creator' => collect([
-                'name' => 'Diogo Antunes',
-            ]),
-            'created_at' => now()->format('d/m/Y'),
-        ]);
+        $course = Course::where('slug', $slug)->firstOrFail();
 
         return inertia('Courses/Show', compact('course'));
     }
