@@ -16,14 +16,8 @@ class CourseWatchRequest extends FormRequest
 
     public function rules(): array
     {
-        /**
-         * @var User
-         */
-        $user = Auth::user();
-
         return [
             'video' => [
-                'required',
                 'numeric',
                 new LessonBelongsToCourse($this->route('slug')),
             ],
