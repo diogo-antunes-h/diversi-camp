@@ -5,7 +5,6 @@ namespace Database\Seeders;
 use App\Models\Lesson;
 use App\Models\LessonComment;
 use Illuminate\Database\Seeder;
-use Illuminate\Foundation\Testing\WithFaker;
 
 class LessonCommentSeeder extends Seeder
 {
