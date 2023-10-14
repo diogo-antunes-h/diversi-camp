@@ -22,6 +22,10 @@ class Course extends Model
         'description',
     ];
 
+    protected $casts = [
+        'created_at' => 'date:d/m/Y',
+    ];
+
     public function lessons()
     {
         return $this->hasMany(Lesson::class, 'course_id', 'id')->orderBY('order');
