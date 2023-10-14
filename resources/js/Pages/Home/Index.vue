@@ -99,6 +99,42 @@
 
                 </div>
             </section>
+
+            <section class="o-section pt-28">
+                <div class="o-wrapper grid grid-cols-3 gap-5">
+
+                    <article class="o-testimonial grid gap-6 text-[#ffff]/[0.87] p-6">
+                        <header class="m-testimonial__header">
+                            <img src="" alt="" class="a-testimonial__avatar w-[100px] h-[100px]">
+                        </header>
+                        <div class="m-testimonial__body grid gap-4">
+                            <p class="a-testimonial__text">Lorem ipsum dolor sit amet consectetur. Laoreet morbi amet suspendisse egestas varius sit tellus turpis. Adipiscing morbi quis eu eu ridiculus ornare quam.</p>
+                            <p class="a-testimonial__autor text-sm font-bold">Lorem ipsum</p>
+                        </div>
+                    </article>
+
+                    <article class="o-testimonial grid gap-6 text-[#ffff]/[0.87] p-6">
+                        <header class="m-testimonial__header">
+                            <img src="" alt="" class="a-testimonial__avatar w-[100px] h-[100px]">
+                        </header>
+                        <div class="m-testimonial__body grid gap-4">
+                            <p class="a-testimonial__text">Lorem ipsum dolor sit amet consectetur. Laoreet morbi amet suspendisse egestas varius sit tellus turpis. Adipiscing morbi quis eu eu ridiculus ornare quam.</p>
+                            <p class="a-testimonial__autor text-sm font-bold">Lorem ipsum</p>
+                        </div>
+                    </article>
+
+                    <article class="o-testimonial grid gap-6 text-[#ffff]/[0.87] p-6">
+                        <header class="m-testimonial__header">
+                            <img src="" alt="" class="a-testimonial__avatar w-[100px] h-[100px]">
+                        </header>
+                        <div class="m-testimonial__body grid gap-4">
+                            <p class="a-testimonial__text">Lorem ipsum dolor sit amet consectetur. Laoreet morbi amet suspendisse egestas varius sit tellus turpis. Adipiscing morbi quis eu eu ridiculus ornare quam.</p>
+                            <p class="a-testimonial__autor text-sm font-bold">Lorem ipsum</p>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
         </main>
     </div>
 
@@ -114,5 +150,20 @@
 
 .o-card {
     box-shadow: 0px 30px 100px 0px rgba(0, 0, 0, 0.20);
+}
+
+.a-testimonial__text {
+    /*  */
+    position: relative;
+    left: 20px
+}
+
+.a-testimonial__text::before {
+    content: "";
+    width: 5px;
+    height: 100%;
+    background-color: #FFCB32;
+    position: absolute;
+    left: -20px;
 }
 </style>
