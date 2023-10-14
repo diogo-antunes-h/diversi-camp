@@ -35,7 +35,7 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::prefix('/courses')->name('courses')->group(function () {
+Route::prefix('/courses')->name('courses')->middleware('auth:sanctum')->group(function () {
     Route::get('', [CoursesController::class, 'watch']);
 
     Route::get('/{slug}', [CoursesController::class, 'show'])->name('.show');
