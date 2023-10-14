@@ -15,6 +15,13 @@ use Inertia\Response;
 
 class CoursesController extends Controller
 {
+    public function search(): Response
+    {
+        $courses = Course::all();
+
+        return inertia('Courses/Search', compact('courses'));
+    }
+
     public function watch(string $slug, CourseWatchRequest $request): Response
     {
         $course = Course::query()
