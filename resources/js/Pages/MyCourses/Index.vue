@@ -19,7 +19,7 @@ import AppLayout from "@/Layouts/AppLayout.vue";
       </div>
       
       <div class="my-5 w-full grid md:grid-cols-4">
-        <template v-for="course in this.courses" :key="course.id">
+        <template v-for="course in courses" :key="course.id">
           <Link :href="route('courses.watch', {slug: course.slug})">
             <div class="w-64 h-64 p-5 border border-gray-200">
                 <img class="rounded-t-lg object-cover"

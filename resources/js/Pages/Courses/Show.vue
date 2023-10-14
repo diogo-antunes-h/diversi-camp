@@ -31,7 +31,7 @@ import { Link, useForm } from '@inertiajs/vue3';
 
                         <div v-if="isSubscribed" class="mt-5">
                             <div>
-                                <Link :href="route('courses.watch', {slug: this.course.slug})"
+                                <Link :href="route('courses.watch', {slug: course.slug})"
                                     class="space-x-1 border rounded-md py-3 px-5 hover:bg-gray-400 hover:text-white dark:hover:bg-white dark:hover:text-black w-40">
                                     Continuar
                                 </Link>
