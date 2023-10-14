@@ -135,6 +135,16 @@
 
                 </div>
             </section>
+
+            <section class="o-section pt-28 text-[#ffff]/[0.87]">
+                <div class="o-wrapper grid gap-5 text-center justify-items-center">
+                    <h2 class="text-5xl font-black text-[#05EBFD]/[0.87]">Lorem ipsum dolor sit amet</h2>
+
+                    <p>Lorem ipsum dolor sit amet consectetur. Laoreet morbi amet suspendisse egestas varius sit tellus turpis. Adipiscing morbi quis eu eu ridiculus ornare quam.</p>
+
+                    <button class=" flex py-2 px-3 bg-[#FFCB32] text-[#140420]/[0.87] w-fit rounded-lg text-base font-bold" >Faça parte</button>
+                </div>
+            </section>
         </main>
     </div>
 
