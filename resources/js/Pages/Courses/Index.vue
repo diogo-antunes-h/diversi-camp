@@ -1,6 +1,6 @@
 <script setup>
 import AppLayout from "@/Layouts/AppLayout.vue";
-import { useForm } from '@inertiajs/vue3';
+import { useForm, usePage } from '@inertiajs/vue3';
 </script>
 
 <template>
@@ -211,6 +211,15 @@ export default {
     },
     changeLesson(lesson) {
       this.actualVideo = lesson;
+      this.$inertia.visit(
+        route('courses.watch', { slug: this.course.slug }),
+        {
+          preserveScroll: true,
+          preserveState: true,
+          data: { video: lesson.id }
+        },
+        { replace: true }
+      );
     }
   },
 };
