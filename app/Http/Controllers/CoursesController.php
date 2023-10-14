@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CourseSubscribeRequest;
+use App\Http\Requests\CourseUnsubscribeRequest;
 use App\Http\Requests\CourseWatchRequest;
 use App\Models\Course;
 use App\Models\User;
+use App\Models\UserCourse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Response;
@@ -33,22 +35,54 @@ class CoursesController extends Controller
          * @var null|User
          */
         $user = Auth::user();
-        $isSubscribed = $user?->courses()
-            ->where('course_id', $course->id)
-            ->exists() ?? false;
 
-        return inertia('Courses/Show', compact('course', 'isSubscribed'));
+        $subscription = UserCourse::query()
+            ->where('user_id', $user->id)
+            ->where('course_id', $course->id)
+            ->first();
+        $isSubscribed = ! empty($subscription);
+
+        $subscriptionId = $subscription?->id;
+
+        return inertia('Courses/Show', compact('course', 'isSubscribed', 'subscriptionId'));
     }
 
     public function subscribe(CourseSubscribeRequest $request): RedirectResponse
     {
-        $course = Course::find($request->validated('course_id'));
-
         /**
          * @var User
          */
         $user = Auth::user();
+
+        $course = Course::find($request->validated('course_id'));
+
+        $existingSubscription = UserCourse::query()
+            ->withTrashed()
+            ->where('course_id', $course->id)
+            ->where('user_id', $user->id)
+            ->first();
+        if (! empty($existingSubscription)) {
+            $existingSubscription->restore();
+
+            return to_route('courses.show', ['slug' => $course->slug]);
+        }
+
         $user->courses()->create(['course_id' => $course->id]);
+
+        return to_route('courses.show', ['slug' => $course->slug]);
+    }
+
+    public function unsubscribe(CourseUnsubscribeRequest $request): RedirectResponse
+    {
+        $courseSubscription = UserCourse::find($request->validated('subscription_id'));
+        if (empty($courseSubscription)) return redirect()->back();
+
+        $courseSubscription->delete();
+
+        /**
+         * @var Course
+         */
+        $course = $courseSubscription->course;
 
         return to_route('courses.show', ['slug' => $course->slug]);
     }
