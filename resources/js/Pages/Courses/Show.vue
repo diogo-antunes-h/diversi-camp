@@ -1,6 +1,6 @@
 <script setup>
 import AppLayout from "@/Layouts/AppLayout.vue";
-import { useForm } from '@inertiajs/vue3'
+import { useForm } from '@inertiajs/vue3';
 </script>
 
 <template>

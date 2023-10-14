@@ -1,6 +1,6 @@
 <script setup>
 import AppLayout from "@/Layouts/AppLayout.vue";
-import Welcome from "@/Components/Welcome.vue";
+import { useForm } from '@inertiajs/vue3';
 </script>
 
 <template>
@@ -9,7 +9,7 @@ import Welcome from "@/Components/Welcome.vue";
       <h2
         class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight"
       >
-        {{ title }}
+        {{ course.title }}
       </h2>
     </template>
 
@@ -22,8 +22,8 @@ import Welcome from "@/Components/Welcome.vue";
             <div class="col-span-3 w-full">
               <iframe
                 class="p-2 w-full h-full center"
-                v-bind:src="video"
-                v-bind:title="name"
+                v-bind:src="actualVideo?.path"
+                v-bind:title="actualVideo?.name"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen
@@ -32,20 +32,20 @@ import Welcome from "@/Components/Welcome.vue";
             <div class="w-full p-5">
               <div
                 class="p-2"
-                v-for="video in classes"
-                :key="video.id"
-                :id="video.id"
+                v-for="lesson in course.lessons"
+                :key="lesson.id"
+                :id="lesson.id"
               >
                 <img
                   class="w-full"
-                  v-bind:src="getVideoThumbnail(video.path)"
-                  v-bind:alt="video.title"
+                  v-bind:src="getVideoThumbnail(lesson.path)"
+                  v-bind:alt="lesson.title"
                 />
                 <button
-                  v-on:click="changeIframe(video.path)"
+                  v-on:click="changeLesson(lesson)"
                   class="p-2 w-full center bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
                 >
-                  {{ video.title }}
+                  {{ lesson.title }}
                 </button>
               </div>
             </div>
@@ -88,7 +88,7 @@ import Welcome from "@/Components/Welcome.vue";
                       rows="6"
                       class="px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400 dark:bg-gray-800"
                       placeholder="Escreva um comentário..."
-                      v-model="comment"
+                      v-model="formComment.comment"
                       required
                     ></textarea>
                   </div>
@@ -101,7 +101,7 @@ import Welcome from "@/Components/Welcome.vue";
                   </button>
                 </div>
                 <div
-                  v-for="comments in discussion"
+                  v-for="comments in actualVideo?.lessonComments"
                   :key="comments.id"
                   :id="comments.id"
                 >
@@ -157,65 +157,6 @@ import Welcome from "@/Components/Welcome.vue";
                       </button>
                     </div>
                   </article>
-                  <div id="responseComment" v-if="replieTextArea">
-                    <div class="mb-6">
-                      <div
-                        class="py-2 px-4 mb-4 bg-white rounded-lg rounded-t-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700"
-                      >
-                        <label for="comment" class="sr-only"
-                          >Seu comentário</label
-                        ><textarea
-                          id="comment"
-                          rows="6"
-                          class="px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400 dark:bg-gray-800"
-                          placeholder="Escreva um comentário..."
-                          required=""
-                          v-model="commentReplie"
-                        ></textarea>
-                      </div>
-                      <button
-                        v-on:click="replieComment(comments.id)"
-                        type="submit"
-                        class="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800"
-                      >
-                        Responder
-                      </button>
-                    </div>
-                  </div>
-                  <div v-if="comments.replies">
-                    <article
-                      v-for="replie in comments.replies"
-                      :key="replie.id"
-                      :id="replie.id"
-                      class="p-6 mb-3 ml-6 lg:ml-12 text-base bg-white rounded-lg dark:bg-gray-900"
-                    >
-                      <footer class="flex justify-between items-center mb-2">
-                        <div class="flex items-center">
-                          <p
-                            class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white font-semibold"
-                          >
-                            <img
-                              class="mr-2 w-6 h-6 rounded-full"
-                              src="https://dummyimage.com/200x200/000/fff"
-                              v-bind:alt="replie.name"
-                            />{{ replie.name }}
-                          </p>
-                          <p class="text-sm text-gray-600 dark:text-gray-400">
-                            <time
-                              pubdate
-                              v-bind:datetime="replie.date"
-                              v-bind:title="replie.date"
-                              >{{ replie.date }}</time
-                            >
-                          </p>
-                        </div>
-                      </footer>
-                      <p class="text-gray-500 dark:text-gray-400">
-                        {{ replie.comment }}
-                      </p>
-                      <div class="flex items-center mt-4 space-x-4"></div>
-                    </article>
-                  </div>
                 </div>
               </div>
             </section>
@@ -228,27 +169,13 @@ import Welcome from "@/Components/Welcome.vue";
 
 <script>
 export default {
+  props: {
+    course: Object,
+    video: Number
+  },
   data() {
     return {
-      title: "PHP do básico ao avançado",
-      video: "https://www.youtube.com/embed/zZ6vybT1HQs",
-      classes: [
-        {
-          id: 1,
-          title: "Instalando o ambiente",
-          path: "https://www.youtube.com/embed/zZ6vybT1HQs",
-        },
-        {
-          id: 2,
-          title: "Apertando os cintos",
-          path: "https://www.youtube.com/embed/zZ6vybT1HQs",
-        },
-        {
-          id: 3,
-          title: "Decolando",
-          path: "https://www.youtube.com/embed/zZ6vybT1HQs",
-        },
-      ],
+      actualVideo: (this.video) ? this.course.lessons.filter((lesson) => (lesson.id === this.video))[0]: this.course.lessons[0],
       discussion: [
         {
           id: 1,
@@ -265,52 +192,26 @@ export default {
           ],
         },
       ],
-      replieTextArea: false,
-      comment: "",
-      commentReplie: "",
+      formComment: useForm({
+        'lesson_id': this.actualVideo?.id,
+        'user_id': this.$page.props.auth.user.id,
+        'comment': ''
+      }),
       user: this.$page.props.auth.user.name,
     };
   },
-  mounted() {
-    fetch("/get-course/1")
-      .then((response) => response.json())
-      .then((json) => this.mountData(json));
-  },
   methods: {
     postComment() {
-      this.discussion.push({
-        id: 1,
-        name: this.user,
-        date: new Date().toLocaleString(),
-        comment: this.comment,
-      });
-      this.comment = "";
-    },
-    replieComment(id) {
-      this.discussion.forEach((element) => {
-        if (element.id == id) {
-          element.replies.push({
-            id: 1,
-            name: this.user,
-            date: new Date().toLocaleString(),
-            comment: this.commentReplie,
-          });
-        }
-      });
-      this.replieTextArea = false;
+      this.formComment.post('asd');
+      this.formComment.reset();
     },
     getVideoThumbnail(video) {
       let videoId = video.split("/").pop();
       return `https://img.youtube.com/vi/${videoId}/0.jpg`;
     },
-    changeIframe(video) {
-      this.video = video;
-    },
-    mountData(json) {
-      this.title = json.title;
-      this.video = json.lessons[0].path;
-      this.classes = json.lessons;
-    },
+    changeLesson(lesson) {
+      this.actualVideo = lesson;
+    }
   },
 };
 </script>
