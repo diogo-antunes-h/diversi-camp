@@ -40,3 +40,5 @@ Route::prefix('/courses')->name('courses')->group(function () {
 
     Route::get('/{slug}', [CoursesController::class, 'show'])->name('.show');
 });
+
+Route::get('/get-course/{id}', 'App\Http\Controllers\Api\Classes\ClassesController@getClasses')->name('get-course');
