@@ -36,7 +36,7 @@ Route::middleware([
 });
 
 Route::prefix('/courses')->name('courses')->group(function () {
-    Route::get('', [CoursesController::class, 'watch'])->name('.watch')->middleware('auth:sanctum');
+    Route::get('/{slug}/watch', [CoursesController::class, 'watch'])->name('.watch')->middleware('auth:sanctum');
 
     Route::get('/{slug}', [CoursesController::class, 'show'])->name('.show');
 
