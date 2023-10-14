@@ -19,16 +19,21 @@ import { useForm } from '@inertiajs/vue3';
                             :alt="course.title" class="w-full h-64" />
                     </div>
                     <div class="mt-5 mx-auto w-fit">
-                        <button @mouseover="mouseOnUnsubscribe = true" @mouseleave="mouseOnUnsubscribe = false"
-                            @click="subscribe"
-                            class="border rounded-md py-3 px-5 hover:bg-gray-400 hover:text-white dark:hover:bg-white dark:hover:text-black w-40">
-                            <span v-if="isSubscribed">{{ mouseOnUnsubscribe ? 'Desinscrever-se' : 'Já inscrito!' }}</span>
-                            <span v-else>Inscrever-se</span>
-                        </button>
-                        <a href="/courses/php-do-basico-ao-avancado/watch" v-if="isSubscribed"
-                            class="space-x-1 border rounded-md py-3 px-5 hover:bg-gray-400 hover:text-white dark:hover:bg-white dark:hover:text-black w-40">
-                            Continuar
-                        </a>
+                        <form @submit.prevent="isSubscribed ? unsubscribe() : subscribe()">
+                            <button @mouseover="mouseOnUnsubscribe = true" @mouseleave="mouseOnUnsubscribe = false"
+                                :disabled="formSubscribe.processing || formUnsubscribe.processing"
+                                class="border rounded-md py-3 px-5 hover:bg-gray-400 hover:text-white dark:hover:bg-white dark:hover:text-black w-40"
+                                action="submit">
+                                <span v-if="isSubscribed">{{ mouseOnUnsubscribe ? 'Desinscrever-se' : 'Já inscrito!'
+                                }}</span>
+                                <span v-else>Inscrever-se</span>
+                            </button>
+                            <a href="/courses/php-do-basico-ao-avancado/watch" v-if="isSubscribed"
+                                class="space-x-1 border rounded-md py-3 px-5 hover:bg-gray-400 hover:text-white dark:hover:bg-white dark:hover:text-black w-40">
+                                Continuar
+                            </a>
+                        </form>
+
                     </div>
                 </div>
             </div>
@@ -79,19 +84,26 @@ import { useForm } from '@inertiajs/vue3';
 export default {
     props: {
         course: Object,
-        isSubscribed: Boolean
+        isSubscribed: Boolean,
+        subscriptionId: Number
     },
     data() {
         return {
             mouseOnUnsubscribe: false,
             formSubscribe: useForm({
                 course_id: this.course.id
-            })
+            }),
+            formUnsubscribe: useForm({
+                subscription_id: this.subscriptionId
+            }),
         };
     },
     methods: {
         subscribe: function () {
             this.formSubscribe.post(route('courses.subscribe'))
+        },
+        unsubscribe: function () {
+            this.formUnsubscribe.post(route('courses.unsubscribe'))
         }
     }
 };

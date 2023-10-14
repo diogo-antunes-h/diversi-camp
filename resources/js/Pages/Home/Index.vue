@@ -61,14 +61,14 @@ const internalHomeLink = computed(() => {
         </header>
 
         <main class="w-full p-28">
-            <section class="grid grid-cols-2">
-                <header class="grid gap-6 text-left">
+            <section class="grid grid-cols-2 gap-8">
+                <header class="grid gap-6 text-left content-center">
                     <h1 class="text-5xl font-black text-[#05EBFD]/[0.87]">Título CTA vai aqui neste lugar</h1>
 
                     <p class="text-xl text-[#ffff]/[0.87]">Lorem ipsum dolor sit amet consectetur. Laoreet morbi amet suspendisse egestas varius sit tellus turpis. Adipiscing morbi quis eu eu ridiculus ornare quam.</p>
 
                     <Link
-                        class="flex px-6 py-3 bg-[#FFCB32] text-[#140420]/[0.87] w-fit rounded-lg text-base font-bold"
+                        class="flex px-6 py-3 bg-[#FFCB32] text-[#140420]/[0.87] w-fit h-fit rounded-lg text-base font-bold"
                         :href="route('register')"
                     >
                         Faça parte
@@ -76,7 +76,7 @@ const internalHomeLink = computed(() => {
                 </header>
 
                 <div class="w-full max-w-full">
-
+                    <img class="a-image-main" src="image-main.png" alt="foto de pessoas estudando">
                 </div>
             </section>
 
@@ -231,7 +231,6 @@ const internalHomeLink = computed(() => {
 }
 
 .a-testimonial__text {
-    /*  */
     position: relative;
     left: 20px
 }
