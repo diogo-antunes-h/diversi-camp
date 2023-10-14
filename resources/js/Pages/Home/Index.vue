@@ -1,8 +1,55 @@
+<script setup>
+import { Link } from '@inertiajs/vue3'
+
+defineProps({
+    canLogin: Boolean,
+    canRegister: Boolean,
+    laravelVersion: String,
+    phpVersion: String,
+})
+
+</script>
+
+
 <template>
 
     <div class="p-home font-sans text-[#140420]/[0.87] text-base">
-        <header class=" w-full h-24 bg-white grid items-center px-28">
+        <header class=" w-full h-24 bg-white grid grid-cols-[auto_1fr_auto] items-center px-28">
             <img class="h-[50px] w-auto" src="logo.png" alt="logo diversatlas">
+
+            <nav class="grid justify-end px-8">
+                <ul class="grid grid-cols-[auto_auto_auto] items-center gap-4 p-0 m-0">
+                    <Link
+                        v-if="$page.props.auth.user"
+                        class="flex px-4 py-3 items-center justify-items-center text-center text-base font-semibold hover:text-[#FE6A7A]"
+                        :href="route('dashboard')"
+                    >
+                        Dashboard
+                    </Link>
+
+                    <template v-else>
+                        <li>
+                            <Link
+                                class="flex px-4 py-3 items-center justify-items-center text-center text-base font-semibold hover:text-[#FE6A7A]"
+                                :href="route('login')"
+                            >
+                                Login
+                            </Link>
+                        </li>
+                        <li class="a-divider w-[1px] h-[50%] bg-slate-300"></li>
+                        <li>
+                            <Link
+                                class="flex px-4 py-3 items-center justify-items-center text-center text-base font-semibold hover:text-[#FE6A7A]"
+                                :href="route('register')"
+                            >
+                                Cadastre-se
+                            </Link>
+                        </li>
+                    </template>
+                </ul>
+            </nav>
+
+            <img class="w-[40px] h-[40px]" src="logo-atlas.svg" alt="logo da atlas techonologies">
         </header>
 
         <main class="w-full p-28">
@@ -149,9 +196,6 @@
     </div>
 
 </template>
-
-<script>
-</script>
 
 <style scoped>
 .p-home {
