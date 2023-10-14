@@ -17,7 +17,7 @@ class CoursesController extends Controller
 {
     public function search(): Response
     {
-        $courses = Course::all();
+        $courses = Course::all() ?? [];
 
         return inertia('Courses/Search', compact('courses'));
     }

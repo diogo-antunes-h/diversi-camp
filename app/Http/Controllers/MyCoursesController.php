@@ -21,7 +21,7 @@ class MyCoursesController extends Controller
             ->whereHas('subscriptions.user', function ($query) use ($user) {
                 $query->where('user_id', $user->id);
             })
-            ->get();
+            ->get() ?? [];
 
         return inertia('MyCourses/Index', compact('courses'));
     }
