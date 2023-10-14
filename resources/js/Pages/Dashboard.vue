@@ -232,11 +232,12 @@ import Welcome from "@/Components/Welcome.vue";
               <div
                 class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
               >
-                <a href="#">
+                <a v-bind:href="book.volumeInfo.previewLink">
                   <img
                     v-bind:src="book.volumeInfo.imageLinks.thumbnail"
                     class="rounded-t-lg h-80 object-cover"
                     alt=""
+                    target="_blank"
                   />
                 </a>
               </div>
