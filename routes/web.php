@@ -39,6 +39,8 @@ Route::prefix('/courses')->name('courses')->group(function () {
     Route::get('', [CoursesController::class, 'watch'])->name('.watch')->middleware('auth:sanctum');
 
     Route::get('/{slug}', [CoursesController::class, 'show'])->name('.show');
+
+    Route::post('/subscribe', [CoursesController::class, 'subscribe'])->name('.subscribe')->middleware('auth:sanctum');
 });
 
 Route::get('/get-course/{id}', 'App\Http\Controllers\Api\Classes\ClassesController@getClasses')->name('get-course');
