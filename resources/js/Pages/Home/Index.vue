@@ -23,7 +23,7 @@
             <section class="o-section pt-28">
                 <div class="o-wrapper grid grid-cols-3 gap-5">
 
-                    <article class="o-card grid gap-6 text-[#ffff]/[0.87] p-6 rounded-lg border border-[#ffffff]/[0.2] bg-[#fff]/[0.1]">
+                    <article class="o-card grid gap-6 text-[#ffff]/[0.87] p-6 rounded-lg border border-[#ffffff]/[0.2] bg-[#fff]/[0.05]">
                         <header class="m-card__header">
                             <img src="" alt="" class="a-card-icon w-[62px] h-[62px]">
                         </header>
@@ -33,7 +33,7 @@
                         </div>
                     </article>
 
-                    <article class="o-card grid gap-6 text-[#ffff]/[0.87] p-6 rounded-lg border border-[#ffffff]/[0.2] bg-[#fff]/[0.1]">
+                    <article class="o-card grid gap-6 text-[#ffff]/[0.87] p-6 rounded-lg border border-[#ffffff]/[0.2] bg-[#fff]/[0.05]">
                         <header class="m-card__header">
                             <img src="" alt="" class="a-card-icon w-[62px] h-[62px]">
                         </header>
@@ -43,9 +43,53 @@
                         </div>
                     </article>
 
-                    <article class="o-card grid gap-6 text-[#ffff]/[0.87] p-6 rounded-lg border border-[#ffffff]/[0.2] bg-[#fff]/[0.1]">
+                    <article class="o-card grid gap-6 text-[#ffff]/[0.87] p-6 rounded-lg border border-[#ffffff]/[0.2] bg-[#fff]/[0.05]">
                         <header class="m-card__header">
                             <img src="" alt="" class="a-card-icon w-[62px] h-[62px]">
+                        </header>
+                        <div class="m-card__body grid gap-4">
+                            <h3 class="a-card-title text-[#05EBFD]/[0.87] text-2xl font-black">Nossos cursos</h3>
+                            <p class="a-card-text">Lorem ipsum dolor sit amet consectetur. Laoreet morbi amet suspendisse egestas varius sit tellus turpis. Adipiscing morbi quis eu eu ridiculus ornare quam.</p>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <section class="o-section pt-28 text-[#ffff]/[0.87]">
+                <div class="o-wrapper grid gap-5 text-center">
+                    <h2 class="text-5xl font-black text-[#05EBFD]/[0.87]">Lorem ipsum dolor sit amet</h2>
+
+                    <p>Lorem ipsum dolor sit amet consectetur. Laoreet morbi amet suspendisse egestas varius sit tellus turpis. Adipiscing morbi quis eu eu ridiculus ornare quam.</p>
+                </div>
+            </section>
+
+            <section class="o-section pt-28">
+                <div class="o-wrapper grid grid-cols-3 gap-5">
+
+                    <article class="o-card grid gap-6 text-[#ffff]/[0.87] p-6 rounded-lg border border-[#ffffff]/[0.2] bg-[#fff]/[0.05]">
+                        <header class="m-card__header">
+                            <img src="" alt="" class="a-card-icon w-full h-[140px]">
+                        </header>
+                        <div class="m-card__body grid gap-4">
+                            <h3 class="a-card-title text-[#05EBFD]/[0.87] text-2xl font-black">Nossos cursos</h3>
+                            <p class="a-card-text">Lorem ipsum dolor sit amet consectetur. Laoreet morbi amet suspendisse egestas varius sit tellus turpis. Adipiscing morbi quis eu eu ridiculus ornare quam.</p>
+                        </div>
+                    </article>
+
+                    <article class="o-card grid gap-6 text-[#ffff]/[0.87] p-6 rounded-lg border border-[#ffffff]/[0.2] bg-[#fff]/[0.05]">
+                        <header class="m-card__header">
+                            <img src="" alt="" class="a-card-icon w-full h-[140px]">
+                        </header>
+                        <div class="m-card__body grid gap-4">
+                            <h3 class="a-card-title text-[#05EBFD]/[0.87] text-2xl font-black">Nossos cursos</h3>
+                            <p class="a-card-text">Lorem ipsum dolor sit amet consectetur. Laoreet morbi amet suspendisse egestas varius sit tellus turpis. Adipiscing morbi quis eu eu ridiculus ornare quam.</p>
+                        </div>
+                    </article>
+
+                    <article class="o-card grid gap-6 text-[#ffff]/[0.87] p-6 rounded-lg border border-[#ffffff]/[0.2] bg-[#fff]/[0.05]">
+                        <header class="m-card__header">
+                            <img src="" alt="" class="a-card-icon w-full h-[140px]">
                         </header>
                         <div class="m-card__body grid gap-4">
                             <h3 class="a-card-title text-[#05EBFD]/[0.87] text-2xl font-black">Nossos cursos</h3>
