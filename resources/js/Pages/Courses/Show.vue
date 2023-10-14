@@ -3,12 +3,12 @@ import AppLayout from "@/Layouts/AppLayout.vue";
 </script>
 
 <template>
-  <AppLayout :title="`Assinar ${course.title}`">
+  <AppLayout :title="`Curso ${course.title}`">
     <template #header>
       <h2
         class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight"
       >
-        {{ title }}
+        {{ course.title }}
       </h2>
     </template>
 
@@ -29,7 +29,7 @@ import AppLayout from "@/Layouts/AppLayout.vue";
                 <div class="p-5">
                     <span class="text-bold text-lg">Informações</span>
 
-                    <div class="mt-10 grid grid-cols-4">
+                    <div class="mt-10 grid grid-cols-4 space-x-5">
                         <div class="flex flex-col">
                             <span class="font-bold">Título</span>
                             <span>{{ course.title }}</span>
