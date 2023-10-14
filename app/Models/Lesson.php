@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Lesson extends Model
 {
@@ -23,7 +24,7 @@ class Lesson extends Model
         'description',
     ];
 
-    public function lessonComments()
+    public function lessonComments(): HasMany
     {
         return $this->hasMany(LessonComment::class, 'lesson_id', 'id')->orderBY('created_at');
     }
