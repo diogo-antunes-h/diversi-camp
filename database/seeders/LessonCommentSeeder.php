@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Lesson;
 use App\Models\LessonComment;
 use Illuminate\Database\Seeder;
+use Illuminate\Foundation\Testing\WithFaker;
 
 class LessonCommentSeeder extends Seeder
 {
@@ -13,28 +14,22 @@ class LessonCommentSeeder extends Seeder
      */
     public function run(): void
     {
-        $lessons = Lesson::get();
+        $lessons = Lesson::query()
+            ->with('course.subscriptions.user')
+            ->get();
 
         foreach ($lessons as $lesson) {
-            for ($i = 0; $i < rand(0, 5); $i++) {
-                LessonComment::create([
-                    'comment' => 'Loren ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl',
-                    'user_id' => 1,
-                    'lesson_id' => $lesson->id,
+            foreach ($lesson->course->subscriptions as $subscription) {
+                $isUserCommented = (bool)random_int(0, 1);
+                if (! $isUserCommented) continue;
+                
+                $comments = LessonComment::factory(random_int(1, 3))->make([
+                    'user_id' => $subscription->user->id,
                 ]);
-            }
-        }
-        
-        $lessonComments = LessonComment::get();
-        
-        foreach ($lessonComments as $lessonComment) {
-            for ($i = 0; $i < rand(0, 3); $i++) {
-                LessonComment::create([
-                    'comment' => 'Loren ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl',
-                    'user_id' => 1,
-                    'lesson_id' => $lessonComment->lesson_id,
-                    'lesson_comment_id' => $lessonComment->id
-                ]);
+
+                foreach ($comments as $comment) {
+                    $lesson->lessonComments()->create($comment->toArray());
+                }
             }
         }
     }
