@@ -85,7 +85,7 @@ const internalHomeLink = computed(() => {
 
                     <article class="o-card grid gap-6 text-[#ffff]/[0.87] p-6 rounded-lg border border-[#ffffff]/[0.2] bg-[#fff]/[0.05]">
                         <header class="m-card__header">
-                            <img src="" alt="" class="a-card-icon w-[62px] h-[62px]">
+                            <img src="icon-courses.svg" alt="ícone nossos cursos" class="a-card-icon w-[62px] h-[62px]">
                         </header>
                         <div class="m-card__body grid gap-4">
                             <h3 class="a-card-title text-[#05EBFD]/[0.87] text-2xl font-black">Nossos cursos</h3>
@@ -95,7 +95,7 @@ const internalHomeLink = computed(() => {
 
                     <article class="o-card grid gap-6 text-[#ffff]/[0.87] p-6 rounded-lg border border-[#ffffff]/[0.2] bg-[#fff]/[0.05]">
                         <header class="m-card__header">
-                            <img src="" alt="" class="a-card-icon w-[62px] h-[62px]">
+                            <img src="icon-events.svg" alt="ícone nossos eventos" class="a-card-icon w-[62px] h-[62px]">
                         </header>
                         <div class="m-card__body grid gap-4">
                             <h3 class="a-card-title text-[#05EBFD]/[0.87] text-2xl font-black">Nossos eventos</h3>
@@ -105,7 +105,7 @@ const internalHomeLink = computed(() => {
 
                     <article class="o-card grid gap-6 text-[#ffff]/[0.87] p-6 rounded-lg border border-[#ffffff]/[0.2] bg-[#fff]/[0.05]">
                         <header class="m-card__header">
-                            <img src="" alt="" class="a-card-icon w-[62px] h-[62px]">
+                            <img src="icon-mission.svg" alt="ícone nossa missão" class="a-card-icon w-[62px] h-[62px]">
                         </header>
                         <div class="m-card__body grid gap-4">
                             <h3 class="a-card-title text-[#05EBFD]/[0.87] text-2xl font-black">Nossa missão</h3>
@@ -129,7 +129,7 @@ const internalHomeLink = computed(() => {
 
                     <article class="o-card grid gap-6 text-[#ffff]/[0.87] p-6 rounded-lg border border-[#ffffff]/[0.2] bg-[#fff]/[0.05]">
                         <header class="m-card__header">
-                            <img src="" alt="" class="a-card-icon w-full h-[140px]">
+                            <img src="image-diversidade-1.jpg" alt="" class="a-card-icon w-full h-[140px]">
                         </header>
                         <div class="m-card__body grid gap-4">
                             <h3 class="a-card-title text-[#05EBFD]/[0.87] text-2xl font-black">
@@ -141,7 +141,7 @@ const internalHomeLink = computed(() => {
 
                     <article class="o-card grid gap-6 text-[#ffff]/[0.87] p-6 rounded-lg border border-[#ffffff]/[0.2] bg-[#fff]/[0.05]">
                         <header class="m-card__header">
-                            <img src="" alt="" class="a-card-icon w-full h-[140px]">
+                            <img src="image-tech-1.jpg" alt="" class="a-card-icon w-full h-[140px]">
                         </header>
                         <div class="m-card__body grid gap-4">
                             <h3 class="a-card-title text-[#05EBFD]/[0.87] text-2xl font-black">
@@ -153,7 +153,7 @@ const internalHomeLink = computed(() => {
 
                     <article class="o-card grid gap-6 text-[#ffff]/[0.87] p-6 rounded-lg border border-[#ffffff]/[0.2] bg-[#fff]/[0.05]">
                         <header class="m-card__header">
-                            <img src="" alt="" class="a-card-icon w-full h-[140px]">
+                            <img src="image-working-1.jpg" alt="" class="a-card-icon w-full h-[140px]">
                         </header>
                         <div class="m-card__body grid gap-4">
                             <h3 class="a-card-title text-[#05EBFD]/[0.87] text-2xl font-black">
@@ -171,7 +171,7 @@ const internalHomeLink = computed(() => {
 
                     <article class="o-testimonial grid gap-6 text-[#ffff]/[0.87] p-6">
                         <header class="m-testimonial__header">
-                            <img src="" alt="" class="a-testimonial__avatar w-[100px] h-[100px]">
+                            <img src="avatar-1.png" alt="" class="a-testimonial__avatar w-[100px] h-[100px]">
                         </header>
                         <div class="m-testimonial__body grid gap-4">
                             <p class="a-testimonial__text">Lorem ipsum dolor sit amet consectetur. Laoreet morbi amet suspendisse egestas varius sit tellus turpis. Adipiscing morbi quis eu eu ridiculus ornare quam.</p>
@@ -181,7 +181,7 @@ const internalHomeLink = computed(() => {
 
                     <article class="o-testimonial grid gap-6 text-[#ffff]/[0.87] p-6">
                         <header class="m-testimonial__header">
-                            <img src="" alt="" class="a-testimonial__avatar w-[100px] h-[100px]">
+                            <img src="avatar-2.png" alt="" class="a-testimonial__avatar w-[100px] h-[100px]">
                         </header>
                         <div class="m-testimonial__body grid gap-4">
                             <p class="a-testimonial__text">Lorem ipsum dolor sit amet consectetur. Laoreet morbi amet suspendisse egestas varius sit tellus turpis. Adipiscing morbi quis eu eu ridiculus ornare quam.</p>
@@ -191,7 +191,7 @@ const internalHomeLink = computed(() => {
 
                     <article class="o-testimonial grid gap-6 text-[#ffff]/[0.87] p-6">
                         <header class="m-testimonial__header">
-                            <img src="" alt="" class="a-testimonial__avatar w-[100px] h-[100px]">
+                            <img src="avatar-3.png" alt="" class="a-testimonial__avatar w-[100px] h-[100px]">
                         </header>
                         <div class="m-testimonial__body grid gap-4">
                             <p class="a-testimonial__text">Lorem ipsum dolor sit amet consectetur. Laoreet morbi amet suspendisse egestas varius sit tellus turpis. Adipiscing morbi quis eu eu ridiculus ornare quam.</p>
@@ -223,7 +223,7 @@ const internalHomeLink = computed(() => {
 
 <style scoped>
 .p-home {
-    background: linear-gradient(180deg, rgba(145, 0, 255, 0.20) 0%, rgba(255, 105, 122, 0.20) 100%), #6412A2;
+    background: no-repeat 100% 0% url("bg-circles.png"), no-repeat -40% 50% url("bg-circles.png"), no-repeat -30% 100% url("bg-circles.png"), linear-gradient(180deg, rgba(145, 0, 255, 0.20) 0%, rgba(255, 105, 122, 0.20) 100%), #6412A2;
 }
 
 .o-card {
