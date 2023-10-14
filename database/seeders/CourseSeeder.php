@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use App\Models\Course;
 use App\Models\Lesson;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class CourseSeeder extends Seeder
@@ -14,9 +13,12 @@ class CourseSeeder extends Seeder
      */
     public function run(): void
     {
+        $title = 'PHP do básico ao avançado';
+
         $course = Course::create([
-            'title' => 'PHP do básico ao avançado',
-            'description' => 'Loren ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl',
+            'title' => $title,
+            'slug' => str($title)->slug(),
+            'description' => fake()->text(600),
         ]);
 
         $lessons = [

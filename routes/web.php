@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CoursesController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -34,9 +35,10 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::get('/courses', function () {
-    return Inertia::render('Courses/Index');
-})->name('courses');
+Route::prefix('/courses')->name('courses')->group(function () {
+    Route::get('', [CoursesController::class, 'watch'])->name('.watch')->middleware('auth:sanctum');
 
+    Route::get('/{slug}', [CoursesController::class, 'show'])->name('.show');
+});
 
 Route::get('/get-course/{id}', 'App\Http\Controllers\Api\Classes\ClassesController@getClasses')->name('get-course');
