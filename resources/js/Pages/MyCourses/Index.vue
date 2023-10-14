@@ -18,10 +18,10 @@ import AppLayout from "@/Layouts/AppLayout.vue";
         <span>Cursos inscritos</span>
       </div>
       
-      <div class="mt-5 w-full overflow-x-auto">
+      <div class="my-5 w-full grid md:grid-cols-4">
         <template v-for="course in this.courses" :key="course.id">
           <Link :href="route('courses.watch', {slug: course.slug})">
-            <div class="w-64 p-5 border border-gray-200">
+            <div class="w-64 h-64 p-5 border border-gray-200">
                 <img class="rounded-t-lg object-cover"
                   src="https://d36ai2hkxl16us.cloudfront.net/thoughtindustries/image/upload/a_exif,c_fill,w_750,h_361/v1/course-uploads/4338ce4e-f809-4f5a-80f4-1d317c4a390d/lsczjuajit2k-38a0f59507j0-php-course-thumbnail.png"
                   alt="" />
