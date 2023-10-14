@@ -13,6 +13,13 @@ class CourseSeeder extends Seeder
      */
     public function run(): void
     {
+        $this->createFirstCourse();
+
+        Course::factory(5)->create();
+    }
+
+    private function createFirstCourse(): void
+    {
         $title = 'PHP do básico ao avançado';
 
         $course = Course::create([
