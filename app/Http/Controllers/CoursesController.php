@@ -4,18 +4,25 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CourseSubscribeRequest;
+use App\Http\Requests\CourseWatchRequest;
 use App\Models\Course;
 use App\Models\User;
-use App\Models\UserCourse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Response;
 
 class CoursesController extends Controller
 {
-    public function watch(): Response
+    public function watch(string $slug, CourseWatchRequest $request): Response
     {
-        return inertia('Courses/Index');
+        $course = Course::query()
+            ->where('slug', $slug)
+            ->with('lessons.lessonComments')
+            ->firstOrFail();
+
+        $video = (int)$request->validated('video');
+
+        return inertia('Courses/Index', compact('course', 'video'));
     }
 
     public function show(string $slug): Response
